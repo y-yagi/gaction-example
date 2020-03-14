@@ -1,0 +1,15 @@
+name: CI
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install obt
+      run: |
+        sudo snap install obt --classic
+
+    - name: Install golangci-lint
+      run: sudo obt https://github.com/golangci/golangci-lint
+
